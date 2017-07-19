@@ -362,9 +362,9 @@ def nearest(coord, url_config=RequestConfig):
         The response from the osrm instance, parsed as a dict
     """
     host = check_host(url_config.host)
-    url = '/'.join(
-        [host, 'nearest', url_config.version, url_config.profile,
-         str(coord).replace('(', '').replace(')', '').replace(' ', '')]
+    url = ''.join(
+        [host, '/nearest/', url_config.version, '/', url_config.profile, '/',
+        ','.join([str(coord[0]), str(coord[1])])]
         )
     rep = urlopen(url)
     parsed_json = json.loads(rep.read().decode('utf-8'))
