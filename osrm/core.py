@@ -346,7 +346,7 @@ def table(coords_src, coords_dest=None,
 
 def nearest(coord, url_config=RequestConfig):
     """
-    Useless function wrapping OSRM 'nearest' function,
+    Useful function wrapping OSRM 'nearest' function,
     returning the reponse in JSON
 
     Parameters
